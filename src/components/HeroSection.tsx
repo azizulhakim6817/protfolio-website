@@ -4,6 +4,7 @@ import { TextReveal } from "@/components/TextReveal";
 import { MagneticButton } from "@/components/MagneticButton";
 import heroPortrait from "@/assets/hero-portrait.png";
 import { ArrowDown, Github, Linkedin, Twitter, Facebook } from "lucide-react";
+import { FaDownload } from "react-icons/fa";
 
 const fullName = "Azizul Hakim";
 
@@ -128,11 +129,15 @@ export function HeroSection() {
             >
               View Projects
             </MagneticButton>
+            {/* Download Resume------ */}
             <MagneticButton
-              href="#contact"
-              className="border border-border text-foreground hover:bg-secondary"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-primary-content hover:opacity-90 flex items-center gap-2"
             >
-              Get in Touch
+              <FaDownload />
+              Download Resume
             </MagneticButton>
           </motion.div>
 
