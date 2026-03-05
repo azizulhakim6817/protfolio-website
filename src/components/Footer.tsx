@@ -9,9 +9,11 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-5">
           {[
-            { icon: Github, href: "/" },
-            { icon: Linkedin, href: "/" },
-            { icon: Twitter, href: "/" },
+            { icon: Github, href: "https://github.com/azizulhakim6817" },
+            {
+              icon: Linkedin,
+              href: "https://www.linkedin.com/in/azizul-hakim-948309237/",
+            },
           ].map((social, i) => (
             <a
               key={i}
