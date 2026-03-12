@@ -93,6 +93,18 @@ const projects = [
     liveLink: "https://foods-sharing-client-assign-10.vercel.app/",
   },
   {
+    image: "https://ibb.co.com/gM2x0GDPhttps://i.ibb.co.com/8D1KmKmc/my-protfolio.png",
+    title: "Protfolio || Full Stack Web Developer",
+    description:
+      "Full Stack Developer specializing in MERN Stack. I build responsive websites and powerful backend APIs using modern JavaScript technologies.",
+
+    tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB", "Next-auth"],
+    color: "from-orange-400/20 to-amber-300/10",
+    githubLink:
+      "https://github.com/azizulhakim6817/foods-management-web-2-nextJS",
+    liveLink: "https://protfolio-website-orcin.vercel.app",
+  },
+  {
     image: "https://i.ibb.co.com/mQPyTNf/foods-management-web.png",
     title: "Foods Management System",
     description:
