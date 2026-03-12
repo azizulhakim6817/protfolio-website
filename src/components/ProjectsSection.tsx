@@ -101,7 +101,7 @@ const projects = [
     tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB", "Next-auth"],
     color: "from-orange-400/20 to-amber-300/10",
     githubLink:
-      "https://github.com/azizulhakim6817/foods-management-web-2-nextJS",
+      "https://github.com/azizulhakim6817/protfolio-website",
     liveLink: "https://protfolio-website-orcin.vercel.app",
   },
   {
