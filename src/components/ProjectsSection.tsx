@@ -26,7 +26,7 @@ const projects = [
     ],
     color: "from-red-500/20 to-rose-400/10",
     githubLink: "https://github.com/azizulhakim6817/blood_donation_client",
-    liveLink: "https://blood-donation-client-brown.vercel.app/",
+    liveLink: "https://client-eight-ebon-64.vercel.app/",
   },
   {
     image:
@@ -91,6 +91,18 @@ const projects = [
     githubLink:
       "https://github.com/azizulhakim6817/foods-sharing-client-assign-10",
     liveLink: "https://foods-sharing-client-assign-10.vercel.app/",
+  },
+  {
+    image: "https://i.ibb.co.com/mQPyTNf/foods-management-web.png",
+    title: "Foods Management System",
+    description:
+      "A comprehensive platform for managing all aspects of food operations, including inventory tracking, meal planning, recipe management, and order monitoring. Designed to streamline workflows, reduce waste, and ensure timely and efficient food service.",
+
+    tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB", "Next-auth"],
+    color: "from-orange-400/20 to-amber-300/10",
+    githubLink:
+      "https://github.com/azizulhakim6817/foods-management-web-2-nextJS",
+    liveLink: "https://foods-management-web-2.vercel.app/",
   },
 ];
 
