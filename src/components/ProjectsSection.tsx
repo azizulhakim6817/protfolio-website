@@ -93,7 +93,7 @@ const projects = [
     liveLink: "https://foods-sharing-client-assign-10.vercel.app/",
   },
   {
-    image: "https://ibb.co.com/gM2x0GDPhttps://i.ibb.co.com/8D1KmKmc/my-protfolio.png",
+    image: "https://i.ibb.co.com/8D1KmKmc/my-protfolio.png",
     title: "Protfolio || Full Stack Web Developer",
     description:
       "Full Stack Developer specializing in MERN Stack. I build responsive websites and powerful backend APIs using modern JavaScript technologies.",
