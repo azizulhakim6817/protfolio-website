@@ -93,7 +93,7 @@ const projects = [
     liveLink: "https://foods-sharing-client-assign-10.vercel.app/",
   },
   {
-    image: "https://i.ibb.co.com/99PnN03F/foods-management-web.png",
+    image: "https://i.ibb.co.com/8D1KmKmc/my-protfolio.png",
     title: "Protfolio || Full Stack Web Developer",
     description:
       "Full Stack Developer specializing in MERN Stack. I build responsive websites and powerful backend APIs using modern JavaScript technologies.",
@@ -105,7 +105,7 @@ const projects = [
     liveLink: "https://protfolio-website-orcin.vercel.app",
   },
   {
-    image: "https://i.ibb.co.com/mQPyTNf/foods-management-web.png",
+    image: "https://i.ibb.co.com/99PnN03F/foods-management-web.png",
     title: "Foods Management System",
     description:
       "A comprehensive platform for managing all aspects of food operations, including inventory tracking, meal planning, recipe management, and order monitoring. Designed to streamline workflows, reduce waste, and ensure timely and efficient food service.",
