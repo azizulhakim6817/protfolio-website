@@ -20,7 +20,7 @@ export function AboutSection() {
               <p>
                 I am a Full Stack Developer. Experienced MERN Stack Developer
                 building fast, scalable, and user-friendly web applications with
-                React, Next.js, TypeScript, Node.js, and MongoDB.
+                React, Next.js, TypeScript, Node.js, and MongoDB, Mongoose, ProsgesSQL, Prisma.
               </p>
               <p>
                 Focused on clean code and seamless user experiences. I can make
@@ -34,11 +34,11 @@ export function AboutSection() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { label: "Name", value: "Azizul Hakim" },
-                { label: "Location", value: "Remote" },
-                { label: "Experience", value: "5+ Years" },
+                { label: "Location", value: "B-Baria" },
+                { label: "Experience", value: "2+ Years" },
                 { label: "Availability", value: "Freelance & Remote" },
                 { label: "Focus", value: "Full Stack" },
-                { label: "Education", value: "Computer Science" },
+                { label: "Education", value: "B.B.M" },
               ].map((item) => (
                 <div key={item.label} className="glass-card rounded-lg p-4">
                   <p className="text-xs text-muted-foreground mb-1">
