@@ -94,14 +94,13 @@ const projects = [
   },
   {
     image: "https://i.ibb.co.com/8D1KmKmc/my-protfolio.png",
-    title: "Protfolio || Full Stack Web Developer",
+    title: "Protfolio || Website",
     description:
       "Full Stack Developer specializing in MERN Stack. I build responsive websites and powerful backend APIs using modern JavaScript technologies.",
 
     tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB", "Next-auth"],
     color: "from-orange-400/20 to-amber-300/10",
-    githubLink:
-      "https://github.com/azizulhakim6817/protfolio-website",
+    githubLink: "https://github.com/azizulhakim6817/protfolio-website",
     liveLink: "https://protfolio-website-orcin.vercel.app",
   },
   {
