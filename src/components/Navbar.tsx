@@ -53,12 +53,15 @@ export function Navbar() {
           ))}
         </div>
 
+    
         {/* Right side */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="flex items-center gap-4">
+          {/* ThemeToggle always visible */}
           <ThemeToggle />
+          {/* Hire Me button only on md+ */}
           <a
             href="#contact"
-            className="rounded-lg font-bold bg-primary px-5 py-2 text-sm  text-primary-foreground transition-transform hover:scale-105"
+            className="hidden md:inline-block rounded-lg font-bold bg-primary px-5 py-2 text-sm text-primary-foreground transition-transform hover:scale-105"
           >
             Hire Me
           </a>
