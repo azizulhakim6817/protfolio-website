@@ -6,7 +6,6 @@ import {
   ScrollReveal,
 } from "@/components/ScrollReveal";
 import { ExternalLink, Github } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -14,7 +13,7 @@ const projects = [
       "https://i.ibb.co.com/W4Yrm67T/grok-image-699c7498-c55d-4d1c-b83f-789a71e66383.png",
     title: "Blood Donation & Funding Application",
     description:
-      "A modern full-stack blood donation and funding platform with secure Stripe payments. Donors can contribute funds, track their donation history, and monitor total contributions, while admins manage donor data and funding records through a dedicated dashboard.",
+      "A modern full-stack blood donation and funding platform with secure Stripe payments.",
     tags: [
       "React.js",
       "Tailwind CSS",
@@ -54,7 +53,7 @@ const projects = [
       "https://i.ibb.co.com/V0nTbx9Z/Chat-GPT-Image-Mar-3-2026-03-23-51-PM.png",
     title: "ZapShift Parcel Management System",
     description:
-      "A full-stack parcel management platform with real-time tracking, cash-on-delivery support, rider dashboard, and secure payment integration.",
+      "A full-stack parcel management platform with real-time tracking.",
     tags: [
       "React.js",
       "Tailwind",
@@ -74,7 +73,7 @@ const projects = [
       "https://i.ibb.co.com/Rksmnhjz/grok-image-f8e7a1a0-9a73-47a9-acc4-fedca6db8af0.png",
     title: "Smart Food Sharing & Waste Reduction System",
     description:
-      "A full-stack food sharing platform that allows users to donate surplus food and request meals.",
+      "A food sharing platform allowing users to donate surplus food.",
     tags: [
       "React.js",
       "Tailwind",
@@ -94,9 +93,9 @@ const projects = [
     image: "https://i.ibb.co.com/8D1KmKmc/my-protfolio.png",
     title: "Portfolio Website",
     description:
-      "Full Stack Developer specializing in MERN Stack. I build responsive websites and powerful backend APIs.",
-    tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB", "Next-auth"],
-    color: "from-orange-400/20 to-amber-300/10",
+      "Full Stack Developer specializing in MERN Stack with responsive UI.",
+    tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB"],
+    color: "from-purple-400/20 to-indigo-300/10",
     githubLink: "https://github.com/azizulhakim6817/protfolio-website",
     liveLink: "https://protfolio-website-orcin.vercel.app",
   },
@@ -104,9 +103,9 @@ const projects = [
     image: "https://i.ibb.co.com/99PnN03F/foods-management-web.png",
     title: "Foods Management System",
     description:
-      "A platform for managing food operations including inventory, recipes, and order monitoring.",
-    tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB", "Next-auth"],
-    color: "from-orange-400/20 to-amber-300/10",
+      "A platform for managing food operations including inventory and orders.",
+    tags: ["Next.js", "Tailwind", "DaisyUI", "Node.js", "MongoDB"],
+    color: "from-pink-400/20 to-rose-300/10",
     githubLink:
       "https://github.com/azizulhakim6817/foods-management-web-2-nextJS",
     liveLink: "https://foods-management-web-2.vercel.app/",
@@ -126,6 +125,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="section-padding">
       <div className="mx-auto max-w-7xl">
+        {/* Heading */}
         <ScrollReveal>
           <p className="heading-section">Projects</p>
           <h2 className="heading-lg mb-12">
@@ -133,54 +133,76 @@ export function ProjectsSection() {
           </h2>
         </ScrollReveal>
 
-        <StaggerReveal className="grid gap-6 md:grid-cols-2">
+        {/* Projects Grid */}
+        <StaggerReveal key={currentPage} className="grid gap-6 md:grid-cols-2">
           {currentProjects.map((project) => (
             <FadeUpItem key={project.title}>
               <motion.div
                 whileHover={{ y: -6 }}
-                className="glass-card group relative overflow-hidden rounded-xl p-3 md:p-4 cursor-pointer"
+                className="glass-card group relative overflow-hidden rounded-xl p-4"
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                  className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 />
 
                 <div className="relative z-10 space-y-3">
-                  <div className="relative rounded-xl overflow-hidden">
-                    <Link to={project.liveLink} target="_blank">
+                  {/* Image */}
+                  <div className="rounded-xl overflow-hidden">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="h-70 w-full object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                        className="h-[280px] w-full object-cover rounded-xl transition-transform duration-500 hover:scale-105"
                       />
-                    </Link>
+                    </a>
                   </div>
 
+                  {/* Title */}
                   <div className="flex items-center justify-between">
-                    <Link to={project.liveLink} target="_blank">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <h3 className="text-xl font-bold text-foreground">
                         {project.title}
                       </h3>
-                    </Link>
+                    </a>
 
                     <div className="flex gap-3">
-                      <Link to={project.githubLink} target="_blank">
-                        <Github className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
-                      </Link>
-                      <Link to={project.liveLink} target="_blank">
-                        <ExternalLink className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
-                      </Link>
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="h-4 w-4 hover:text-foreground" />
+                      </a>
+
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4 hover:text-foreground" />
+                      </a>
                     </div>
                   </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {project.description.slice(0, 150)}...
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground">
+                    {project.description.slice(0, 120)}...
                   </p>
 
+                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 pt-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground"
+                        className="rounded-full border px-3 py-1 text-xs"
                       >
                         {tag}
                       </span>
@@ -200,8 +222,8 @@ export function ProjectsSection() {
               onClick={() => setCurrentPage(i + 1)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
                 currentPage === i + 1
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-muted-foreground hover:bg-primary/20"
+                  ? "bg-primary text-white"
+                  : "bg-secondary hover:bg-primary/20"
               }`}
             >
               {i + 1}
