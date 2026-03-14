@@ -18,14 +18,15 @@ export function AboutSection() {
           <ScrollReveal delay={0.1}>
             <div className="space-y-6 body-text">
               <p>
-                I am a Full Stack Developer. Experienced MERN Stack Developer
-                building fast, scalable, and user-friendly web applications with
-                React, Next.js, TypeScript, Node.js, and MongoDB, Mongoose, ProsgesSQL, Prisma.
+                I am Azizul Hakim, a Frontend and MERN Stack Developer skilled
+                in React, Next.js, Node.js, Express, Firebase, MongoDB,
+                Mongoose, HTML, CSS, JavaScript, and Tailwind CSS.
               </p>
               <p>
-                Focused on clean code and seamless user experiences. I can make
-                an even punchier 1-line version for portfolio headers if you
-                want. Do you want me to do that?
+                I am passionate about building responsive and high-performance
+                web applications while enhancing user experience. I am excited
+                to contribute to innovative projects and continuously grow as a
+                professional developer
               </p>
             </div>
           </ScrollReveal>
