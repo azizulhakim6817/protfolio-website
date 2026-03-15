@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { TextReveal } from "@/components/TextReveal";
 import { MagneticButton } from "@/components/MagneticButton";
@@ -8,33 +8,29 @@ import { FaDownload } from "react-icons/fa";
 
 const fullName = "Azizul Hakim";
 
+// Typewriter Component
 function TypewriterName() {
   const [displayed, setDisplayed] = useState("");
   const [index, setIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    const timeout = setTimeout(
-      () => {
-        if (!deleting) {
-          if (index < fullName.length) {
-            setDisplayed(fullName.slice(0, index + 1));
-            setIndex(index + 1);
-          } else {
-            setTimeout(() => setDeleting(true), 2000);
-          }
-        } else {
-          if (index > 0) {
-            setDisplayed(fullName.slice(0, index - 1));
-            setIndex(index - 1);
-          } else {
-            setDeleting(false);
-          }
-        }
-      },
-      deleting ? 60 : 120,
-    );
-    return () => clearTimeout(timeout);
+    let delay = deleting ? 60 : index === fullName.length ? 2000 : 120;
+
+    timeoutRef.current = setTimeout(() => {
+      if (!deleting) {
+        if (index < fullName.length) setIndex(index + 1);
+        else setDeleting(true);
+      } else {
+        if (index > 0) setIndex(index - 1);
+        else setDeleting(false);
+      }
+    }, delay);
+
+    setDisplayed(fullName.slice(0, index));
+
+    return () => clearTimeout(timeoutRef.current);
   }, [index, deleting]);
 
   return (
@@ -49,33 +45,38 @@ function TypewriterName() {
   );
 }
 
+// Animated Number Component
+const AnimatedNumber = ({ value }: { value: number }) => {
+  const [count, setCount] = useState(0);
+  const startRef = useRef(0);
+
+  useEffect(() => {
+    const duration = 1500;
+    let start = 0;
+    let rafId: number;
+
+    const step = () => {
+      start += value / (duration / 16);
+      if (start >= value) start = value;
+      setCount(Math.round(start));
+      if (start < value) rafId = requestAnimationFrame(step);
+    };
+
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
+  }, [value]);
+
+  return <p className="text-3xl font-bold gradient-text">{count}</p>;
+};
+
+// Stats
 const stats: { value: number; label: string }[] = [
   { value: 50, label: "Projects" },
   { value: 100, label: "Clients" },
   { value: 75, label: "Awards" },
 ];
 
-const AnimatedNumber = ({ value }: { value: number }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const duration = 1500; // 1.5 seconds
-    const increment = value / (duration / 16); // ~60fps
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= value) {
-        start = value;
-        clearInterval(timer);
-      }
-      setCount(Math.round(start));
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [value]);
-
-  return <p className="text-3xl font-bold gradient-text">{count}</p>;
-};
+// Hero Section
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
@@ -85,7 +86,7 @@ export function HeroSection() {
         <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-accent/5 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto flex  flex-col-reverse gap-4 md:gap-0 lg:flex-row lg:items-center w-full">
+      <div className="relative mx-auto flex flex-col-reverse gap-4 md:gap-0 lg:flex-row lg:items-center w-full">
         {/* Text content */}
         <div className="flex-1 space-y-8">
           <div>
@@ -97,9 +98,9 @@ export function HeroSection() {
             >
               Full Stack Developer
             </motion.p>
-            <h1 className="text-4xl font-bold leading-10 ">
-              <TextReveal text="Building Modern" delay={0.3} />
 
+            <h1 className="text-4xl font-bold leading-10">
+              <TextReveal text="Building Modern" delay={0.3} />
               <span className="gradient-text">
                 <TextReveal text="Web Experiences" delay={0.6} />
               </span>
@@ -118,6 +119,7 @@ export function HeroSection() {
           </motion.p>
 
           <motion.div
+            id="resume"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
@@ -129,7 +131,6 @@ export function HeroSection() {
             >
               View Projects
             </MagneticButton>
-            {/* Download Resume------ */}
             <MagneticButton
               href="/resume.pdf"
               target="_blank"
@@ -150,7 +151,7 @@ export function HeroSection() {
           >
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <AnimatedNumber value={Number(stat.value)} />
+                <AnimatedNumber value={stat.value} />
                 <p className="text-xs text-muted-foreground mt-1">
                   {stat.label}
                 </p>

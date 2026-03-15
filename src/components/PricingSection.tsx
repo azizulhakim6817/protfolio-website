@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
-import {
-  StaggerReveal,
-  FadeUpItem,
-  ScrollReveal,
-} from "@/components/ScrollReveal";
 import { Check, X, ArrowRight } from "lucide-react";
+import { StaggerReveal, FadeUpItem, ScrollReveal } from "@/components/ScrollReveal";
 
 const plans = [
   {
@@ -104,12 +100,8 @@ export function PricingSection() {
 
                 <div className="flex items-baseline justify-center gap-1 mb-8">
                   <span className="text-sm text-muted-foreground">$</span>
-                  <span className="text-5xl font-bold gradient-text">
-                    {plan.price}
-                  </span>
-                  <span className="text-sm text-muted-foreground italic">
-                    / {plan.period}
-                  </span>
+                  <span className="text-5xl font-bold gradient-text">{plan.price}</span>
+                  <span className="text-sm text-muted-foreground italic">/ {plan.period}</span>
                 </div>
 
                 <div className="space-y-3 mb-8">
@@ -122,9 +114,7 @@ export function PricingSection() {
                       )}
                       <span
                         className={`text-sm ${
-                          feature.included
-                            ? "text-foreground"
-                            : "text-muted-foreground/50"
+                          feature.included ? "text-foreground" : "text-muted-foreground/50"
                         }`}
                       >
                         {feature.name}
@@ -143,9 +133,7 @@ export function PricingSection() {
                 </motion.a>
 
                 {plan.note && (
-                  <p className="mt-4 text-center text-xs text-muted-foreground italic">
-                    {plan.note}
-                  </p>
+                  <p className="mt-4 text-center text-xs text-muted-foreground italic">{plan.note}</p>
                 )}
               </div>
             </FadeUpItem>

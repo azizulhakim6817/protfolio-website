@@ -9,6 +9,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import LeftSidebar from "@/components/leftSidebar";
+import NavIcons from "@/components/NavIcons";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         {/* RIGHT CONTENT */}
         <div className="flex-1 w-full">
           <Navbar />
+          <NavIcons />
           <HeroSection />
           <AboutSection />
           <SkillsSection />

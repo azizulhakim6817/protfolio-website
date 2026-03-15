@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @layer base {
   :root {
@@ -36,9 +36,21 @@
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(200 100% 40%), hsl(260 70% 55%));
-    --gradient-subtle: linear-gradient(135deg, hsl(210 15% 95%), hsl(210 15% 92%));
-    --gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(200 100% 40% / 0.06), transparent 40%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(200 100% 40%),
+      hsl(260 70% 55%)
+    );
+    --gradient-subtle: linear-gradient(
+      135deg,
+      hsl(210 15% 95%),
+      hsl(210 15% 92%)
+    );
+    --gradient-glow: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      hsl(200 100% 40% / 0.06),
+      transparent 40%
+    );
     --shadow-glow: 0 0 40px -10px hsl(200 100% 40% / 0.2);
     --glass-bg: hsl(210 15% 96% / 0.7);
     --glass-border: hsl(214 20% 85% / 0.6);
@@ -82,9 +94,21 @@
     --input: 220 16% 16%;
     --ring: 200 100% 55%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(200 100% 55%), hsl(260 80% 65%));
-    --gradient-subtle: linear-gradient(135deg, hsl(220 18% 10%), hsl(220 18% 6%));
-    --gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(200 100% 55% / 0.06), transparent 40%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(200 100% 55%),
+      hsl(260 80% 65%)
+    );
+    --gradient-subtle: linear-gradient(
+      135deg,
+      hsl(220 18% 10%),
+      hsl(220 18% 6%)
+    );
+    --gradient-glow: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      hsl(200 100% 55% / 0.06),
+      transparent 40%
+    );
     --shadow-glow: 0 0 40px -10px hsl(200 100% 55% / 0.3);
     --glass-bg: hsl(220 18% 10% / 0.6);
     --glass-border: hsl(220 16% 20% / 0.5);
@@ -107,16 +131,22 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
     @apply tracking-tight;
   }
 
-  code, pre {
-    font-family: 'JetBrains Mono', monospace;
+  code,
+  pre {
+    font-family: "JetBrains Mono", monospace;
   }
 
   ::selection {
@@ -168,4 +198,27 @@
   .hover-lift {
     @apply transition-transform duration-300 ease-out hover:-translate-y-1;
   }
+}
+
+/* scrolling icons----------------------- */
+html {
+  scroll-behavior:smooth;
+}
+
+@keyframes scrollMove {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-scroll {
+  animation: scrollMove 2s infinite;
 }

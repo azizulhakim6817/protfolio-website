@@ -5,6 +5,7 @@ import { MagneticButton } from "@/components/MagneticButton";
 import { Send, Mail, MapPin } from "lucide-react";
 import { FaWhatsappSquare } from "react-icons/fa";
 import confetti from "canvas-confetti";
+import { Link } from "react-router-dom";
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
@@ -54,13 +55,17 @@ export function ContactSection() {
               <div className="space-y-4">
                 <div
                   onClick={() =>
-                    (window.location.href = "mailto:azizulhakim68178@gmail.com")
+                    window.open(
+                      "https://mail.google.com/mail/?view=cm&fs=1&to=azizulhakim68178@gmail.com",
+                      "_blank",
+                    )
                   }
                   className="flex items-center gap-4 p-2 rounded-lg bg-primary/10 hover:opacity-80 transition cursor-pointer"
                 >
                   <div className="rounded-lg bg-primary/20 p-3">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
+
                   <div>
                     <p className="text-xs text-muted-foreground">Email</p>
                     <p className="font-medium text-foreground">
@@ -68,10 +73,16 @@ export function ContactSection() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="rounded-lg bg-primary/10 p-3">
+                <div
+                  onClick={() =>
+                    window.open("https://wa.me/8801743086886", "_blank")
+                  }
+                  className="flex items-center gap-4 p-2 rounded-lg bg-primary/10 hover:opacity-80 transition cursor-pointer"
+                >
+                  <div className="rounded-lg bg-primary/20 p-3">
                     <FaWhatsappSquare className="h-5 w-5 text-primary" />
                   </div>
+
                   <div>
                     <p className="text-xs text-muted-foreground">WhatsApp</p>
                     <p className="font-medium text-foreground">
