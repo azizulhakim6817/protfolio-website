@@ -2,6 +2,8 @@ import React from "react";
 import profile from "../assets/profile.png";
 import { ArrowDown, Github, Linkedin, Twitter, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
+import { Video } from "lucide-react";
+import intoVideo from "../assets/intro-video-azizul hakim.mp4";
 
 const skills = [
   { lang: "English", percent: 100 },
@@ -30,6 +32,25 @@ const LeftSidebar: React.FC = () => {
             Front-end Developer <br />
             Mern Stack || Full Stack Developer
           </p>
+        </div>
+        {/* into-video */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.4 }}
+            className=" flex justify-center mb-2"
+          >
+            <a
+              href={intoVideo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4  rounded-full bg-primary text-white text-sm font-medium shadow-md hover:scale-105 transition-all"
+            >
+              <Video className="w-4 h-4"  />
+              Watch Video
+            </a>
+          </motion.div>
         </div>
 
         {/* Info */}
