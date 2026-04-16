@@ -30,6 +30,27 @@ const projects = [
   },
   {
     image:
+      "https://i.ibb.co.com/Q7q0vwD1/Chat-GPT-Image-Apr-16-2026-08-10-58-PM.png",
+    title: "FamilyCare – Trusted Caregiving Platform",
+    description:
+      "FamilyCare connects families with trusted caretakers for easy and secure care services.",
+    tags: [
+      "Next.js",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Node.js",
+      "MongoDB",
+      "Stripe",
+      "Next-Auth",
+      "JWT",
+    ],
+    color: "from-red-500/20 to-rose-400/10",
+    githubLink:
+      "https://github.com/azizulhakim6817/family-care-service?tab=readme-ov-file",
+    liveLink: "https://family-care-service-platform.vercel.app/",
+  },
+  {
+    image:
       "https://i.ibb.co.com/pvkRVfzq/grok-image-aa7d5034-4f71-410b-9122-6710b29a0126.png",
     title: "Children Kidzz Toys – Kids’ E-Commerce",
     description:
